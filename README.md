@@ -29,4 +29,4 @@ npm start
 * Access the app by navigating to http://localhost:3001/
 
 ## Links
-* [Heroku Deployment](https://bm-budget-tracker.herokuapp.com/)
+* [Heroku Deployment](https://bm-git-commit-history.herokuapp.com/)
