@@ -16,11 +16,15 @@ An example app displaying the commit history for this repository.
 
 ## Installation
 
+After you have cloned the repository, you must CD into that directory and use the following command to install the required packages:
+
 ~~~
 npm install
 ~~~
 
 ## Testing
+
+After the install is finished, run the following command to start the app:
 
 ~~~
 npm start
