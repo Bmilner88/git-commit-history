@@ -2,6 +2,8 @@ import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import dateFormat from './utils/dateFormat';
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -35,16 +37,16 @@ class App extends React.Component {
           <h1>git-commit-history</h1>
         </header>
         <h2 className='mt-3'>Commits:</h2>
-        <div className='container'>
+        <div className='container align-center'>
           {
             items.map((item) => (
-              <div className='card' /* style='width: 18rem' */>
+              <div className='card m-3' key={item.sha}>
                 <div className='card-body'>
                   <h5 className='card-title'>{item.commit.author.name}</h5>
-                  <h6 class='card-subtitle mb-2 text-muted'>{item.commit.committer.date}</h6>
-                  <p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href={`${item.html_url}`} target='_blank' rel='noreferrer' class='card-link'>Commit Link</a>
-                  <a href={`${item.committer.html_url}`} target='_blank' rel='noreferrer' class='card-link'>Committer's Profile</a>
+                  <h6 className='card-subtitle mb-2 text-muted'>{dateFormat(item.commit.committer.date)}</h6>
+                  <p className='card-text'>{item.commit.message}</p>
+                  <a href={`${item.html_url}`} target='_blank' rel='noreferrer' className='card-link'>Commit Link</a>
+                  <a href={`${item.committer.html_url}`} target='_blank' rel='noreferrer' className='card-link'>Committer's Profile</a>
                 </div>
               </div>
             ))
@@ -56,13 +58,3 @@ class App extends React.Component {
 };
 
 export default App;
-
-
-/* href={`${item.html_url}`} target='_blank' rel='noreferrer' */
-
-/* <li>
-                  Username: {item.commit.author.name}
-                </li>
-                <li>
-                  Commit Message: {item.commit.message}
-                </li> */
